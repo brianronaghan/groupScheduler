@@ -2,13 +2,15 @@ angular.module('scheduler', [
   'scheduler.services',
   'scheduler.auth',
   'scheduler.home',
+  'scheduler.calendar',
+  'scheduler.create',
   'ngRoute'
 ])
 .config(function ($routeProvider, $httpProvider) {
   $routeProvider
     .when('/', {
-      templateUrl: 'app/home/home.html',
-      controller: 'HomeController',
+      templateUrl: 'app/calendar/calendarView.html',
+      controller: 'CalendarController',
       authenticate: true
     })
     .when('/landing', {
@@ -21,6 +23,10 @@ angular.module('scheduler', [
     .when('/signin', {
       templateUrl: 'app/auth/signin.html',
       controller: 'AuthController'
+    })
+    .when('/create', {
+      templateUrl: 'app/createEvents/createEventView.html',
+      controller: 'CreateEventController'
     });
 
     $httpProvider.interceptors.push('AttachTokens');

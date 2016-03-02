@@ -1,11 +1,11 @@
 angular.module('scheduler.calendar', [])
 
-.controller('calendarController', function ($scope, $location, Events) {
+.controller('CalendarController', function ($scope, $location, Events) {
   $scope.myEvents = [];
   $scope.allEvents = [];
-  $scope.myId = 4;// session id
+  $scope.myId = 1;// session id
   $scope.months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
-  
+
   function init () {
     $scope.getmine();
   }

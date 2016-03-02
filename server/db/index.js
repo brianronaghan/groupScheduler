@@ -1,5 +1,8 @@
 var Sequelize = require('sequelize');
-var db = new Sequelize('latte', 'root', '123');
+var db = new Sequelize('latte', 'root', '', {
+  dialect: 'mysql',
+  port:1036
+});
 
 var User = db.define('User', {
   name: Sequelize.STRING,

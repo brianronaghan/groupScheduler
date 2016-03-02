@@ -1,6 +1,5 @@
-angular.module('scheduler.event', [])
-
-.controller('createEventController', function ($scope, $location, Events, Friends) {
+angular.module('scheduler.create', [])
+.controller('CreateEventController', function ($scope, $location, Events, Friends) {
   init();
   $scope.friends = [];
   function init () {
@@ -22,11 +21,9 @@ angular.module('scheduler.event', [])
   };
   $scope.createEvent = function () {
     console.log("hello I got pressed");
-    /// TODO: once the user decides to (presses a button), 
+    /// TODO: once the user decides to (presses a button),
     // send out the event, to all the friends and stuff, and create the event
   };
-
-
 });
 // .factory('Events', function ($http) {
 //   var events = {};
