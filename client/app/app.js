@@ -13,6 +13,11 @@ angular.module('scheduler', [
       controller: 'CalendarController',
       authenticate: true
     })
+    .when('/calendar', {
+      templateUrl: 'app/calendar/calendarView.html',
+      controller: 'CalendarController',
+      authenticate: true
+    })
     .when('/landing', {
       templateUrl: 'app/landing/landing.html'
     })
@@ -26,7 +31,8 @@ angular.module('scheduler', [
     })
     .when('/create', {
       templateUrl: 'app/createEvents/createEventView.html',
-      controller: 'CreateEventController'
+      controller: 'CreateEventController',
+      authenticate: true
     });
 
     $httpProvider.interceptors.push('AttachTokens');

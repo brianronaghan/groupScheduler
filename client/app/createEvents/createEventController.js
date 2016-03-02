@@ -1,10 +1,6 @@
 angular.module('scheduler.create', [])
 .controller('CreateEventController', function ($scope, $location, Events, Friends) {
-  init();
   $scope.friends = [];
-  function init () {
-    $scope.getfriendslist();
-  }
   $scope.getfriendslist = function () {
     $scope.friends = Friends.getFriends(Events.myId);
   };
@@ -24,6 +20,10 @@ angular.module('scheduler.create', [])
     /// TODO: once the user decides to (presses a button),
     // send out the event, to all the friends and stuff, and create the event
   };
+  function init () {
+    $scope.getfriendslist();
+  }
+  init();
 });
 // .factory('Events', function ($http) {
 //   var events = {};

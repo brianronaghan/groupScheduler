@@ -12,7 +12,7 @@ angular.module('scheduler.calendar', [])
   $scope.getmine = function () {
     Events.getEvents($scope.myId)
       .then(function (events) {
-        console.log('events:', events);
+        console.log('in cal controller events:', events);
         $scope.myEvents = Events.myEvents;
       })
       .catch(function (error) {
